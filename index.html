@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Crew Attendance</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div>
+      <p class="eyebrow">Crew Attendance</p>
+      <h1>Track crew status, classes, and records in one place.</h1>
+      <p class="subhead">Add students, update their attendance, and keep a running record of updates for every crew member.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <div class="card-header">
+        <h2>Add student</h2>
+        <p>Admins can add a new student with their dream class.</p>
+      </div>
+      <form id="student-form" class="form-grid">
+        <label>
+          Student name
+          <input type="text" id="student-name" placeholder="e.g., Maya Johnson" required />
+        </label>
+        <label>
+          Dream class
+          <input type="text" id="student-class" placeholder="e.g., Robotics" required />
+        </label>
+        <button type="submit" class="primary">Add student</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <div class="card-header">
+        <h2>Quick status actions</h2>
+        <p>Update everyone with one click.</p>
+      </div>
+      <div class="button-row">
+        <button type="button" class="ghost" data-bulk="present">Mark all present</button>
+        <button type="button" class="ghost" data-bulk="late">Mark all late</button>
+        <button type="button" class="ghost" data-bulk="unexcused">Mark all unexcused</button>
+        <button type="button" class="ghost" data-bulk="excused">Mark all excused</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="card-header">
+        <h2>Student roster</h2>
+        <p>Update each student, see their dream class, and review their attendance record.</p>
+      </div>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Student</th>
+              <th>Dream class</th>
+              <th>Status</th>
+              <th>Last updated</th>
+              <th>Records</th>
+            </tr>
+          </thead>
+          <tbody id="student-table"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <template id="record-template">
+    <div class="record">
+      <div class="record-meta"></div>
+      <p class="record-note"></p>
+    </div>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
